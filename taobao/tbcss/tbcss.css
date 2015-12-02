@@ -1,0 +1,28 @@
+.banner{
+    width: 100%;
+    height: 120px;
+}
+.row
+{
+    width: 100%;
+    height: 100px;
+}
+.detail
+{
+     margin-top: 10px;
+     font-size: 16px;
+}
+.imagedetail
+{
+    padding:0px;
+    max-height: 40%;
+    background-size: 100% 40%;
+}
+.button-bar>.button
+{
+    padding-right: 0px;
+}
+.sizebutton
+{
+    background-color: red;
+}

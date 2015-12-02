@@ -1,0 +1,16 @@
+<ion-view view-title="商品" hide-tabs="false">
+    <ion-content class="padding" ng-controller="productCtrl">
+              <ion-refresher  pulling-text="下拉刷新" on-refresh="doRefresh()">
+              </ion-refresher>
+                  <div class="list" >
+                      <a ng-repeat="item in items" class="item item-thumbnail-left"  ng-click="toDetail(item.name,item.imageUrl,item.price)">
+                      <img src={{item.imageUrl}}>
+                      <span>{{item.name}}</span>
+                      <p style="color: red">{{item.price}}</p>
+                      <p style="margin-top: 10px">{{item.detail}}</p>
+                  </a>
+                  </div>
+        <ion-infinite-scroll  on-infinite="loadMore()" distance="1%" icon="ion-loading-c" ></ion-infinite-scroll>
+          </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

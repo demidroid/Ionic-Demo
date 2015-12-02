@@ -1,0 +1,60 @@
+<ion-view view-title="尺码,颜色分类"  hide-tabs="true" ng-controller="sizeAndColorStyle">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button class="button-stable">
+            返回
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content  style="background-color: #eeeeee">
+        <ion-scroll direction="y" style="width: 100%; height: 100%">
+        <div class="list">
+            <a class="item item-thumbnail-left" href="#" style="border-width: 0px;">
+                <img src={{product.imageUrl}}>
+                <h2>{{product.name}}</h2>
+                <p>{{product.price}}</p>
+                <p ng-if="size">已选:*{{size}}*</p>
+                <p ng-if="color">{{color}}</p>
+            </a>
+            <a class="item" style="background-color: #eeeeee;border-width: 0px;">
+                尺码
+                <hr>
+               <a ng-repeat="size in sizes" style="margin-left: 10px;z-index: inherit;">
+                   <div class="button" id={{size}} ng-click="selectSize(size)" style="margin-bottom: 5px;"> {{size}}</div>
+               </a>
+            </a>
+
+            <a class="item" style="background-color: #eeeeee;border-width: 0px;">
+                颜色分类
+                <hr>
+                <a ng-repeat="color in colors" style="margin-left: 10px;">
+                    <div class="button" ng-click="selectSize(color)" style="margin-bottom: 5px;"> {{color}}</div>
+                </a>
+            </a>
+
+            <a class="item" style="background-color: #eeeeee;border-width: 0px; text-align: center; margin-top: 10px;">
+                <hr>
+                <div style="float: left; height: 44px; margin-top: 10px;">购买数量</div>
+                <div style="display:inline; float: left;height: 44px;">
+                    <div class="button"  style="float: left;height: 44px;" ng-click="jianNumber()">-</div>
+                    <input type="text" style="float: left;height: 44px;width: 120px; text-align: center" value={{number}} />
+                    <div class="button" style="float: left;" ng-click="addNumber()">+</div>
+                </div>
+            </a>
+
+            <a class="item" style="background-color: #eeeeee;border-width: 0px;">
+                <hr>
+                分期购(可选)
+                <ion-scroll direction="x">
+                <a ng-repeat="fenqi in fenqis" style="margin-left: 10px;">
+                    <div class="button" ng-click="selectSize(fenqi)" style="margin-bottom: 5px; width: 30%; background-color: white;padding: 5px; line-height: 20px;"> {{fenqi}}</div>
+                </a>
+                </ion-scroll>
+            </a>
+        </div>
+            <div  style="background-color: white;text-align: center; border-width: 0px; margin-top: 50px;margin-bottom: 50px;width: 100%;height: 50px; background-color: white">
+                <div class="button button-positive" style="margin-right: 5px; min-height: 20px; width: 120px; margin-top: 2.5px;">加入购物车</div>
+                <div class="button button-assertive" style="margin-left: 5px; min-height: 20px; width: 120px; margin-top: 2.5px;">立即购买</div>
+            </div>
+        </ion-scroll>
+    </ion-content>
+</ion-view>
